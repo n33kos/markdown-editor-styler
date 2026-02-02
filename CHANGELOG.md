@@ -1,6 +1,28 @@
 # Change Log
 
-All notable changes to the "Markdown Header Styler" extension will be documented in this file.
+All notable changes to the "Markdown Editor Styler" extension will be documented in this file.
+
+## [2.0.0] - 2026-02-01
+
+### Added
+- Custom CSS support for complete styling control
+- Simple nested object configuration where each key maps to a CSS string
+- List marker styling for bullets (`-`, `*`, `+`) and numbered lists
+- Bold text styling (entire `**text**` including markers and content)
+- Italic text styling (entire `*text*` including markers and content)
+- Horizontal rule styling for `---`, `___`, and `***`
+- Rainbow gradient defaults for vibrant, fun styling out of the box
+- Comprehensive styled examples showing different themes
+
+### Changed
+- Rebranded from "Markdown Header Styler" to "Markdown Editor Styler"
+- Configuration namespace changed from `markdownHeaderStyler` to `markdownEditorStyler`
+- Command names updated to reflect broader functionality
+- Simplified configuration structure to single-level nested object
+- Each element (h1-h6, listMarker, bold, italic, hr) is a direct CSS string
+- Bold and italic now style the entire formatted string, not just markers
+- Enhanced README with multiple themed configuration examples
+- More intuitive and flexible styling system
 
 ## [1.0.0] - 2026-02-01
 

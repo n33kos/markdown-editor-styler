@@ -1,14 +1,14 @@
 {
-  "name": "markdown-header-styler",
+  "name": "markdown-editor-styler",
   "publisher": "suskitech",
   "author": "n33kos",
-  "displayName": "Markdown Header Styler",
-  "description": "Changes font sizes of markdown headers in edit mode for better readability",
-  "version": "1.0.0",
+  "displayName": "Markdown Editor Styler",
+  "description": "Style markdown elements with custom CSS - headers, lists, bold, italic, and more in edit mode",
+  "version": "2.0.0",
   "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/n33kos/markdown-header-styler.git"
+    "url": "https://github.com/n33kos/markdown-editor-styler.git"
   },
   "license": "MIT",
   "engines": {
@@ -19,11 +19,15 @@
   ],
   "keywords": [
     "markdown",
-    "headers",
     "styling",
-    "font-size",
-    "readability",
     "editor",
+    "css",
+    "headers",
+    "lists",
+    "bold",
+    "italic",
+    "formatting",
+    "readability",
     "typography"
   ],
   "activationEvents": [
@@ -32,58 +36,42 @@
   "main": "./src/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Markdown Header Styler",
+      "title": "Markdown Editor Styler",
       "properties": {
-        "markdownHeaderStyler.h1FontSize": {
-          "type": "string",
-          "default": "1.8em",
-          "description": "Font size for H1 headers"
+        "markdownEditorStyler": {
+          "type": "object",
+          "default": {
+            "h1": "font-size: 2em; font-weight: bold;",
+            "h2": "font-size: 1.8em; font-weight: bold;",
+            "h3": "font-size: 1.5em; font-weight: bold;",
+            "h4": "font-size: 1.3em; font-weight: bold;",
+            "h5": "font-size: 1.2em; font-weight: bold;",
+            "h6": "font-size: 1.1em; font-weight: bold;",
+            "listMarker": "",
+            "bold": "font-weight: bold;",
+            "italic": "font-style: italic;",
+            "hr": ""
+          },
+          "description": "CSS styles for markdown elements. Each key (h1-h6, listMarker, bold, italic, hr) maps to a CSS string that styles the entire element.",
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "markdownHeaderStyler.h2FontSize": {
-          "type": "string",
-          "default": "1.5em",
-          "description": "Font size for H2 headers"
-        },
-        "markdownHeaderStyler.h3FontSize": {
-          "type": "string",
-          "default": "1.3em",
-          "description": "Font size for H3 headers"
-        },
-        "markdownHeaderStyler.h4FontSize": {
-          "type": "string",
-          "default": "1.2em",
-          "description": "Font size for H4 headers"
-        },
-        "markdownHeaderStyler.h5FontSize": {
-          "type": "string",
-          "default": "1.1em",
-          "description": "Font size for H5 headers"
-        },
-        "markdownHeaderStyler.h6FontSize": {
-          "type": "string",
-          "default": "1.05em",
-          "description": "Font size for H6 headers"
-        },
-        "markdownHeaderStyler.headerColor": {
-          "type": "string",
-          "default": "",
-          "description": "Optional color for headers (e.g., #3366cc)"
-        },
-        "markdownHeaderStyler.enabled": {
+        "markdownEditorStyler.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable/disable header styling"
+          "description": "Enable/disable markdown styling"
         }
       }
     },
     "commands": [
       {
-        "command": "markdownHeaderStyler.toggle",
-        "title": "Toggle Markdown Header Styling"
+        "command": "markdownEditorStyler.toggle",
+        "title": "Toggle Markdown Editor Styling"
       },
       {
-        "command": "markdownHeaderStyler.refresh",
-        "title": "Refresh Markdown Header Styling"
+        "command": "markdownEditorStyler.refresh",
+        "title": "Refresh Markdown Editor Styling"
       }
     ]
   },

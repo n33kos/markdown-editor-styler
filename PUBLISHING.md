@@ -1,6 +1,7 @@
-# Publishing Guide for Markdown Header Styler
+# Publishing Guide for Markdown Editor Styler
 
 ## Prerequisites Completed ✅
+
 - [x] Package.json configured
 - [x] README.md created
 - [x] CHANGELOG.md created
@@ -19,7 +20,7 @@
    - Publisher name: Your choice (e.g., "SuskiTech" or "Suski Technology")
 4. Once publisher is created, click on it
 5. Click "New extension" → "Visual Studio Code"
-6. Drag and drop the file: `markdown-header-styler-1.0.0.vsix`
+6. Drag and drop the file: `markdown-editor-styler-X.X.X.vsix`
 7. Your extension is now published!
 
 ### Option 2: Command Line Publishing
@@ -36,9 +37,11 @@
    - **IMPORTANT**: Copy the token NOW (you won't see it again!)
 
 2. **Login with vsce**:
+
    ```bash
    npx vsce login suskitech
    ```
+
    - Enter your PAT when prompted
 
 3. **Publish**:
@@ -62,6 +65,7 @@ npm run publish:major
 ```
 
 These commands will automatically:
+
 1. Increment the version in package.json
 2. Create a git tag
 3. Package the extension
@@ -70,9 +74,9 @@ These commands will automatically:
 ## After Publishing
 
 1. Your extension will be available at:
-   `https://marketplace.visualstudio.com/items?itemName=suskitech.markdown-header-styler`
+   `https://marketplace.visualstudio.com/items?itemName=suskitech.markdown-editor-styler`
 
-2. Users can install it by searching "Markdown Header Styler" in VS Code
+2. Users can install it by searching "Markdown Editor Styler" in VS Code
 
 3. Consider adding:
    - Screenshots to your marketplace listing (edit in marketplace manager)
