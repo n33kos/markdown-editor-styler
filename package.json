@@ -1,0 +1,101 @@
+{
+  "name": "markdown-header-styler",
+  "publisher": "suskitech",
+  "author": "n33kos",
+  "displayName": "Markdown Header Styler",
+  "description": "Changes font sizes of markdown headers in edit mode for better readability",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n33kos/markdown-header-styler.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "headers",
+    "styling",
+    "font-size",
+    "readability",
+    "editor",
+    "typography"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Markdown Header Styler",
+      "properties": {
+        "markdownHeaderStyler.h1FontSize": {
+          "type": "string",
+          "default": "1.8em",
+          "description": "Font size for H1 headers"
+        },
+        "markdownHeaderStyler.h2FontSize": {
+          "type": "string",
+          "default": "1.5em",
+          "description": "Font size for H2 headers"
+        },
+        "markdownHeaderStyler.h3FontSize": {
+          "type": "string",
+          "default": "1.3em",
+          "description": "Font size for H3 headers"
+        },
+        "markdownHeaderStyler.h4FontSize": {
+          "type": "string",
+          "default": "1.2em",
+          "description": "Font size for H4 headers"
+        },
+        "markdownHeaderStyler.h5FontSize": {
+          "type": "string",
+          "default": "1.1em",
+          "description": "Font size for H5 headers"
+        },
+        "markdownHeaderStyler.h6FontSize": {
+          "type": "string",
+          "default": "1.05em",
+          "description": "Font size for H6 headers"
+        },
+        "markdownHeaderStyler.headerColor": {
+          "type": "string",
+          "default": "",
+          "description": "Optional color for headers (e.g., #3366cc)"
+        },
+        "markdownHeaderStyler.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable header styling"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "markdownHeaderStyler.toggle",
+        "title": "Toggle Markdown Header Styling"
+      },
+      {
+        "command": "markdownHeaderStyler.refresh",
+        "title": "Refresh Markdown Header Styling"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "publish:patch": "vsce publish patch",
+    "publish:minor": "vsce publish minor",
+    "publish:major": "vsce publish major"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "vsce": "^2.15.0"
+  }
+}
